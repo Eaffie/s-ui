@@ -31,7 +31,7 @@
 ---
 
 > 本仓库是 [alireza0/s-ui](https://github.com/alireza0/s-ui) 的二次开发分支,在保留上游全部能力的基础上,
-> 把已在 [3x-ui 改版](https://github.com/Teminuosi/3x-ui) 验证过的体验改进搬了过来:
+> 把已在 [3x-ui 改版](https://github.com/Eaffie/3x-ui) 验证过的体验改进搬了过来:
 > 全自动一键安装、面板更新指向本仓库、协议模板、行内二维码、批量删除、中转与多节点部署(逐步推进)。
 >
 > 仅供个人学习与交流,请勿用于非法用途,请勿用于生产环境。上游版权归原作者所有。
@@ -45,7 +45,7 @@
 一条命令装好,全程无需交互:全自动会自动生成随机管理员账号密码和随机面板路径,装完直接打印访问信息。
 
 ```sh
-SUI_AUTO=1 bash <(curl -Ls https://raw.githubusercontent.com/Teminuosi/s-ui/main/install.sh)
+SUI_AUTO=1 bash <(curl -Ls https://raw.githubusercontent.com/Eaffie/s-ui/main/install.sh)
 ```
 
 ### 交互式安装
@@ -53,14 +53,14 @@ SUI_AUTO=1 bash <(curl -Ls https://raw.githubusercontent.com/Teminuosi/s-ui/main
 想自己一步步设置端口、路径、账号密码,用普通模式:
 
 ```sh
-bash <(curl -Ls https://raw.githubusercontent.com/Teminuosi/s-ui/main/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/Eaffie/s-ui/main/install.sh)
 ```
 
 装好后,在服务器上随时输入 `s-ui` 打开管理菜单(启动/停止/重启、改设置、改账号、SSL 证书、BBR 等)。
 
 ### Windows
 
-1. 从 [Releases](https://github.com/Teminuosi/s-ui/releases/latest) 下载最新 Windows 包并解压
+1. 从 [Releases](https://github.com/Eaffie/s-ui/releases/latest) 下载最新 Windows 包并解压
 2. 以管理员身份运行 `install-windows.bat`,按向导完成
 
 ---
@@ -125,13 +125,13 @@ docker run -itd \
     -v $PWD/db/:/app/db/ \
     -v $PWD/cert/:/root/cert/ \
     --name s-ui --restart=unless-stopped \
-    ghcr.io/teminuosi/s-ui:latest
+    ghcr.io/eaffie/s-ui:latest
 ```
 
 自行构建镜像:
 
 ```shell
-git clone --recurse-submodules https://github.com/Teminuosi/s-ui
+git clone --recurse-submodules https://github.com/Eaffie/s-ui
 cd s-ui
 docker build -t s-ui .
 ```
@@ -152,7 +152,7 @@ s-ui        # 菜单里选「卸载」
 这条**彻底清除**命令不依赖任何已安装的文件：
 
 ```sh
-bash <(curl -Ls https://raw.githubusercontent.com/Teminuosi/s-ui/main/install.sh) purge
+bash <(curl -Ls https://raw.githubusercontent.com/Eaffie/s-ui/main/install.sh) purge
 ```
 
 它会清掉：systemd 服务、`/etc/s-ui/`（含数据库）、`/usr/local/s-ui/`、
@@ -169,7 +169,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/Teminuosi/s-ui/main/install.sh
 
 ```shell
 # 克隆(含前端子模块)
-git clone --recurse-submodules https://github.com/Teminuosi/s-ui
+git clone --recurse-submodules https://github.com/Eaffie/s-ui
 cd s-ui
 
 # 一键构建并运行(前端 + 后端)
@@ -187,7 +187,7 @@ go build -o sui main.go
 ./sui
 ```
 
-前端代码在独立子模块仓库:[Teminuosi/s-ui-frontend](https://github.com/Teminuosi/s-ui-frontend)
+前端代码在独立子模块仓库:[Eaffie/s-ui-frontend](https://github.com/Eaffie/s-ui-frontend)
 
 </details>
 
